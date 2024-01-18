@@ -43,11 +43,12 @@ export const UtmManager = () => {
     }
 
     if (Object.keys(utmData).length === utmParameters.length) {
-      console.log('loop ends');
-      setTimeout(() => {
-        console.log('setTimeout()');
-        UtmInjector(utmData);
-      }, 1000);
+      // UtmInjector(utmData);
     }
+
+    setTimeout(() => {
+      console.log('setTimeout()');
+      UtmInjector(utmData);
+    }, 3000);
   }
 };
