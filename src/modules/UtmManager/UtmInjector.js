@@ -8,7 +8,7 @@ export const UtmInjector = (utmData) => {
           console.log('injecting hidden fields to form:', utmData[key].label);
           console.log('utmData[key].localStorage:', utmData[key].localStorage);
           form.addHiddenFields({
-            [utmData[key].label]: utmData[key].localStorage,
+            [utmData[key].label]: utmData[key].utm || utmData[key].localStorage,
           });
         }
       }
