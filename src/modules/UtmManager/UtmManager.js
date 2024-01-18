@@ -5,10 +5,22 @@ export const UtmManager = () => {
 
   // Instantiate URLSearchParams object
   const searchParams = new URLSearchParams(window.location.search);
+
   // Instantiate utmData object
   const utmData = {};
+
   // Define utmParameters array
-  const utmParameters = ['utm_medium', 'utm_campaign', 'utm_source'];
+  const utmParameters = [
+    'utm_source',
+    'utm_medium',
+    'utm_campaign',
+    'campaignid',
+    'vendorid',
+    'device',
+    'utm_content',
+    'utm_term',
+    'utm_matchtype',
+  ];
 
   utmParameters.forEach((parameter) => {
     utmData[parameter] = {
