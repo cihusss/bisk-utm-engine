@@ -50,9 +50,9 @@ export const UtmManager = () => {
     // }, 3000);
   }
 
-  if (counter === utmParameters.length) {
-    console.log('counter:', counter);
-    console.log('utmData:', utmData);
-    UtmInjector(utmData);
-  }
+  // if (counter === utmParameters.length) {
+  //   console.log('counter:', counter);
+  //   console.log('utmData:', utmData);
+  //   UtmInjector(utmData);
+  // }
 };

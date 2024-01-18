@@ -1,3 +1,4 @@
+import { InjectUTM } from './UtmInjector';
 export const UtmHandler = (a, b, c) => {
   console.log(`\nUTM HANDLER ------------------------->`);
 
@@ -8,12 +9,14 @@ export const UtmHandler = (a, b, c) => {
     console.log('BOTH NULL > doing nothing');
   } else if (a && !b) {
     localStorage.setItem(c, a);
+    InjectUTM(c, a);
     console.log('utm PRESENT > storing UTM');
   } else if (!a && b) {
     console.log('localStorage PRESENT > doing nothing');
   } else if (a && b) {
     if (a !== b) {
       localStorage.setItem(c, a);
+      InjectUTM(c, a);
       console.log(
         'BOTH PRESENT > utm DIFFERENT from localStorage > storing new utm'
       );
