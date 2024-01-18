@@ -30,6 +30,8 @@ export const UtmManager = () => {
     };
   });
 
+  console.log('utmData:', utmData);
+
   // Run UtmHandler for each utmData object
   for (let key in utmData) {
     if (utmData[key].utm) {
@@ -39,5 +41,17 @@ export const UtmManager = () => {
         utmData[key].label
       );
     }
+  }
+
+  // Inject hidden fields into Marketo form
+  if (typeof MktoForms2 != 'undefined') {
+    MktoForms2.whenReady(function (form) {
+      // form.addHiddenFields({"Results_PDF_URL__c":"assignedCampaignID"});
+      for (let key in utmData) {
+        if (utmData[key].utm) {
+          form.addHiddenFields({ [utmData[key].label]: utmData[key].utm });
+        }
+      }
+    });
   }
 };
