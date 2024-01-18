@@ -1,4 +1,5 @@
 import { UtmHandler } from './UtmHandler';
+import { UtmInjector } from './UtmInjector';
 export const UtmManager = () => {
   // console.log(`\nUTM MANAGER ------------------------->!`);
 
@@ -43,7 +44,10 @@ export const UtmManager = () => {
 
     if (Object.keys(utmData).length === utmParameters.length) {
       console.log('loop ends');
-      // UtmInjector(utmData);
+      setTimeout(() => {
+        console.log('setTimeout()');
+        UtmInjector(utmData);
+      }, 1000);
     }
   }
 };

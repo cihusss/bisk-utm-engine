@@ -1,13 +1,15 @@
-export const UtmInjector = (kkk, ppp) => {
-  console.log('running UTM injector...');
+export const UtmInjector = () => {
   // Inject hidden fields into Marketo form with localStorage values
   if (typeof MktoForms2 != 'undefined') {
     MktoForms2.whenReady(function (form) {
       // form.addHiddenFields({"Results_PDF_URL__c":"assignedCampaignID"});
-      console.log('injecting hidden fields...');
-      form.addHiddenFields({
-        kkk: ppp,
-      });
+      for (let key in utmData) {
+        if (utmData[key].localStorage) {
+          form.addHiddenFields({
+            [utmData[key].label]: utmData[key].localStorage,
+          });
+        }
+      }
     });
   }
 };
