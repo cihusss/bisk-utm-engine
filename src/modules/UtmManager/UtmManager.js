@@ -52,6 +52,7 @@ export const UtmManager = () => {
 
   if (counter === utmParameters.length) {
     console.log('counter:', counter);
+    console.log('utmData:', utmData);
     UtmInjector(utmData);
   }
 };
