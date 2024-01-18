@@ -5,6 +5,7 @@ export const UtmInjector = (utmData) => {
       // form.addHiddenFields({"Results_PDF_URL__c":"assignedCampaignID"});
       for (let key in utmData) {
         if (utmData[key].localStorage) {
+          console.log('utmData[key].localStorage:', utmData[key].localStorage);
           form.addHiddenFields({
             [utmData[key].label]: utmData[key].localStorage,
           });
