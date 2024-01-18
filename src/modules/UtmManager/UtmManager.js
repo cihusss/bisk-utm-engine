@@ -47,6 +47,6 @@ export const UtmManager = () => {
     setTimeout(() => {
       console.log('setTimeout()');
       UtmInjector(utmData);
-    }, 1000);
+    }, 3000);
   }
 };
