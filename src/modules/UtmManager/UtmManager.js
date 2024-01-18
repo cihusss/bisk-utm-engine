@@ -1,4 +1,5 @@
 import { UtmHandler } from './UtmHandler';
+import { UtmInjector } from './UtmInjector';
 
 export const UtmManager = () => {
   // console.log(`\nUTM MANAGER ------------------------->!`);
@@ -41,19 +42,10 @@ export const UtmManager = () => {
         utmData[key].label
       );
     }
-  }
 
-  // Inject hidden fields into Marketo form
-  if (typeof MktoForms2 != 'undefined') {
-    MktoForms2.whenReady(function (form) {
-      // form.addHiddenFields({"Results_PDF_URL__c":"assignedCampaignID"});
-      for (let key in utmData) {
-        if (utmData[key].localStorage) {
-          form.addHiddenFields({
-            [utmData[key].label]: utmData[key].localStorage,
-          });
-        }
-      }
-    });
+    if (Object.keys(utmData).length === utmParameters.length) {
+      console.log('loop ends');
+      UtmInjector(utmData);
+    }
   }
 };
