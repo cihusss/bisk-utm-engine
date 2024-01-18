@@ -4,7 +4,7 @@ export const UtmInjector = (utmData) => {
     MktoForms2.whenReady(function (form) {
       // form.addHiddenFields({"Results_PDF_URL__c":"assignedCampaignID"});
       for (let key in utmData) {
-        if (utmData[key].localStorage) {
+        if (utmData[key].utm || utmData[key].localStorage) {
           console.log('injecting hidden fields to form:', utmData[key].label);
           console.log('utmData[key].localStorage:', utmData[key].localStorage);
           form.addHiddenFields({
