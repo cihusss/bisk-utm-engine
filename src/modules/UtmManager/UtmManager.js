@@ -43,10 +43,10 @@ export const UtmManager = () => {
         utmData[key].label
       );
     }
-
-    setTimeout(() => {
-      console.log('setTimeout()');
-      UtmInjector(utmData);
-    }, 3000);
   }
+
+  setTimeout(() => {
+    console.log('setTimeout()');
+    UtmInjector(utmData);
+  }, 3000);
 };
