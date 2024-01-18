@@ -32,8 +32,10 @@ export const UtmManager = () => {
 
   console.log('utmData:', utmData);
 
+  let counter = 0;
   // Run UtmHandler for each utmData object
   for (let key in utmData) {
+    counter++;
     if (utmData[key].utm) {
       UtmHandler(
         utmData[key].utm,
@@ -42,13 +44,14 @@ export const UtmManager = () => {
       );
     }
 
-    if (Object.keys(utmData).length === utmParameters.length) {
-      // UtmInjector(utmData);
-    }
+    // setTimeout(() => {
+    //   console.log('setTimeout()');
+    //   UtmInjector(utmData);
+    // }, 3000);
+  }
 
-    setTimeout(() => {
-      console.log('setTimeout()');
-      UtmInjector(utmData);
-    }, 3000);
+  if (counter === utmParameters.length) {
+    console.log('counter:', counter);
+    UtmInjector(utmData);
   }
 };
