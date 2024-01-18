@@ -30,8 +30,6 @@ export const UtmManager = () => {
     };
   });
 
-  console.log('utmData:', utmData);
-
   let counter = 0;
   // Run UtmHandler for each utmData object
   for (let key in utmData) {
@@ -44,5 +42,6 @@ export const UtmManager = () => {
       );
     }
   }
+  console.log('utmData:', utmData);
   return utmData;
 };
