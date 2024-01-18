@@ -1,10 +1,10 @@
 import { UtmManager } from './modules/UtmManager/UtmManager';
 import { UtmInjector } from './modules/UtmManager/UtmInjector';
 const App = () => {
-  const utmData = UtmManager();
+  const utmData = {};
 
   window.addEventListener('load', (e) => {
-    UtmManager();
+    UtmManager(utmData);
     UtmInjector(utmData);
   });
 };

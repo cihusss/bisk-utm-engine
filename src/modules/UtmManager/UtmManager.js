@@ -43,5 +43,5 @@ export const UtmManager = () => {
     }
   }
   console.log('utmData:', utmData);
-  return utmData;
+  // return utmData;
 };
