@@ -1,4 +1,4 @@
-export const UtmInjector = () => {
+export const UtmInjector = (utmData) => {
   // Inject hidden fields into Marketo form with localStorage values
   if (typeof MktoForms2 != 'undefined') {
     MktoForms2.whenReady(function (form) {
