@@ -48,8 +48,10 @@ export const UtmManager = () => {
     MktoForms2.whenReady(function (form) {
       // form.addHiddenFields({"Results_PDF_URL__c":"assignedCampaignID"});
       for (let key in utmData) {
-        if (utmData[key].utm) {
-          form.addHiddenFields({ [utmData[key].label]: utmData[key].utm });
+        if (utmData[key].localStorage) {
+          form.addHiddenFields({
+            [utmData[key].label]: utmData[key].localStorage,
+          });
         }
       }
     });
